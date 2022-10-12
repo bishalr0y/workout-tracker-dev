@@ -1,17 +1,17 @@
 version: '3'
 services:
   
-  # frontend:
-  #   build: ./frontend
-  #   container_name: frontend
-  #   ports:
-  #     - 3000:3000
-  #   networks:
-  #   - mern-app
-  #   depends_on:
-  #   - mongo
-  #   - mongo-express
-  #   - backend
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    ports:
+      - 3000:3000
+    networks:
+    - mern-app
+    depends_on:
+    - mongo
+    - mongo-express
+    - backend
   
   backend:
     build: ./backend
