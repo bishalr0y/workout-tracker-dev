@@ -8,7 +8,7 @@ const workoutRoutes = require('./routes/workoutRoutes')
 const app = express()
 
 const PORT = 4000
-const MONG_URI = "mongodb://admin:password@localhost:27017/"
+const MONG_URI = "mongodb://admin:password@mongo:27017/"
 
 // middleware to log the req
 app.use((req, res, next) => {
@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use('/api/workouts', workoutRoutes)
 
 // Connect to the DB
-mongoose.connect(MONG_URI)
+mongoose.connect(MONG_URI, { useNewUrlParser: true })
     .then(() => {
         // listening to requests only when the database is connected
         app.listen(PORT, () => {

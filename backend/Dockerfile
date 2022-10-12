@@ -1,4 +1,4 @@
-FROM node:18-alpine3.15
+FROM node
 
 RUN npm i -g nodemon 
 
