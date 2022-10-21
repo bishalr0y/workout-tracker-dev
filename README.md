@@ -22,7 +22,6 @@ This is a workout tracker web application 💪 that is made with MERN stack. The
 $ docker-compose up
 ```
 
- ```
   
 ### LICENSE 🏢
 ```
