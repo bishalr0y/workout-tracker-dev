@@ -17,34 +17,11 @@ This is a workout tracker web application 💪 that is made with MERN stack. The
 *This clones the repo*
 
 
-* ``cd`` into the new folder and cd into the backend folder type
+* ``cd`` into the new folder, and run the following command (*make sure you have docker and docker-compose installed*)
 ```sh
-$ npm install
-```
-* Again, ``cd`` into the frontend folder and repeat the above command
-
-*This installs the required dependencies for both the frontend and backend*
-
-
-* Create a ```.env``` file in the backend directory and add the following
-```
-PORT = 5000
-MONG_URI = <MONGO_URI>
-NODE_ENV = production 
-
+$ docker-compose up
 ```
 
-    
-* To run the backend  
- ```sh
- $ cd backend/
- $ npm run dev
- ```
- 
-* To run the frontend
- ```sh
- $ cd backend/frontend
- $ npm run start
  ```
   
 ### LICENSE 🏢
