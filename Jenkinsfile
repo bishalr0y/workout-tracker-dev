@@ -3,20 +3,24 @@ pipeline {
     stages {
         stage("build") {
             steps {
-                echo 'building the backend docker container'
+                echo "building the backend docker container"
                 sh "docker compose up -d"
             }
         }
 
         stage("test") {
             steps {
-                echo 'testing the frontend docker container'
+                echo "testing the app"
             }
         }
 
         stage("deploy") {
-            echo 'deploying the application using docker compose'
+            steps {
+                echo "deploying the app"
+            }
         }
+
+    }
 
         post {
 
@@ -35,5 +39,4 @@ pipeline {
                 echo 'Failed!'
             }
         }
-    }
 }
