@@ -21,15 +21,18 @@ pipeline {
         post {
 
             always {
-                mail to: bishalroy895@gmail, subject: 'The pipeline was executed!'
+                //mail to: bishalroy895@gmail, subject: 'The pipeline was executed!'
+                echo 'Pipeline executed!'
             }
 
             success {
-                mail to: bishalroy895@gmail.com, subject: 'The Pipeline failed :('
+                //mail to: bishalroy895@gmail.com, subject: 'The Pipeline failed :('
+                echo 'Success!'
             }
             
             failure {
-                mail to: bishalroy895@gmail.com, subject: 'The Pipeline failed :('
+                //mail to: bishalroy895@gmail.com, subject: 'The Pipeline failed :('
+                echo 'Failed!'
             }
         }
     }
