@@ -1,23 +1,31 @@
 pipeline {
     agent any 
     stages {
-        stage("build") {
+        stage("verifying tooling") {
             steps {
-                echo "building the backend docker container"
-                sh "docker-compose up"
+                sh '''
+                docker version
+                docker info
+                docker compose version
+                curl --version
+                '''
             }
         }
 
-        stage("test") {
+        stage("prune docker data") {
             steps {
-                echo "testing the app"
+                sh 'docker system prune -a --volumes -f'
             }
         }
 
-        stage("deploy") {
+        stage("start container") {
             steps {
-                echo "deploying the app"
+                sh 'docker compose up'
             }
+        }
+
+        stage("verify docker compose") {
+            sh 'docker compose'
         }
 
     }
