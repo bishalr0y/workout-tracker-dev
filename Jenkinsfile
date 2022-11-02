@@ -20,7 +20,7 @@ pipeline {
 
         stage("start container") {
             steps {
-                sh 'docker compose up'
+                sh 'docker-compose up'
             }
         }
 
