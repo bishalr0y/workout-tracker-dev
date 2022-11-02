@@ -6,27 +6,30 @@ pipeline {
                 sh '''
                 docker version
                 docker info
-                docker compose version
+                docker-compose version
                 curl --version
                 '''
             }
         }
 
-        stage("prune docker data") {
-            steps {
-                sh 'docker system prune -a --volumes -f'
-            }
-        }
+//         stage("prune docker data") {
+//             steps {
+//                 sh 'docker system prune -a --volumes -f'
+//             }
+//         }
 
-        stage("start container") {
-            steps {
-                sh 'docker compose up'
-            }
-        }
+//         stage("start container") {
+//             steps {
+//                 sh 'docker compose up'
+//             }
+//         }
 
-        stage("verify docker compose") {
-            sh 'docker compose'
-        }
+//         stage("verify docker compose") {
+            
+//             steps {
+//                 sh 'docker-compose ps'
+//             }
+//         }
 
     }
 
