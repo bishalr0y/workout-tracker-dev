@@ -12,24 +12,24 @@ pipeline {
             }
         }
 
-//         stage("prune docker data") {
-//             steps {
-//                 sh 'docker system prune -a --volumes -f'
-//             }
-//         }
+        stage("prune docker data") {
+            steps {
+                sh 'docker system prune -a --volumes -f'
+            }
+        }
 
-//         stage("start container") {
-//             steps {
-//                 sh 'docker compose up'
-//             }
-//         }
+        stage("start container") {
+            steps {
+                sh 'docker compose up'
+            }
+        }
 
-//         stage("verify docker compose") {
+        stage("verify docker compose") {
             
-//             steps {
-//                 sh 'docker-compose ps'
-//             }
-//         }
+            steps {
+                sh 'docker-compose ps'
+            }
+        }
 
     }
 
